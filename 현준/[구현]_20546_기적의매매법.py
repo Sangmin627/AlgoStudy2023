@@ -20,10 +20,14 @@ for i in range(len(chart)):
 	if num_jun >= 1:
 		jun_stock = jun_stock+num_jun
 		jun_money = jun_money - num_jun*chart[i]
+	
+	
 	# 성민이 매수하는 경우 3번연속 하락일 때, 구매가 가능할 때
 	if i >= 3 and (chart[i-3] > chart [i-2] > chart[i-1]) and num_sung >=1:
 		sung_stock = sung_stock + num_sung
 		sung_money = sung_money - num_sung*chart[i]
+
+
 	# 성민이 매도하는 경우 3번연속 상승일때
 	elif i >= 3 and (chart[i-3] < chart [i-2] < chart[i-1]):
 		#전량매도
