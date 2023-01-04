@@ -45,6 +45,7 @@ def matching(bingo_pan, correct):
             for y in range(5):
                 if bingo_pan[x][y] == value :
                     bingo_pan[x][y] = 0
+
                     if x == y: bingo_count += cross1_sum(bingo_pan)  # 좌상향 대각선
                     if x+y == 4: bingo_count += cross2_sum(bingo_pan)  # 우상향 대각선
                     bingo_count += hor_sum(bingo_pan, x) + ver_sum(bingo_pan, y)
