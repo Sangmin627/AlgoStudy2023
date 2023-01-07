@@ -24,7 +24,7 @@ for x in range(n):
 def calculateNumber():
     for x in range(n):
         for y in range(n):
-            if myInput[x][y] == "x" and board[x][y] == ".":
+            if myInput[x][y] == "x":
                 cnt = 0
                 for i in range(8):
                     nx = x + dx[i]
