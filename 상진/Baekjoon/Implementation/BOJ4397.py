@@ -18,19 +18,13 @@ for x in range(n):
 for x in range(n):
     myInput.append(list(input()))
     for y in range(n):
-        if myInput[x][y] == "x" and (x, y) in bomb:
+        if myInput[x][y] == "x" and (x,y) in bomb:
             flag = False
 
-if not flag:
-    answer = board
+def calculateNumber():
     for x in range(n):
         for y in range(n):
-            print(answer[x][y], end="")
-        print()
-else:
-    for x in range(n):
-        for y in range(n):
-            if myInput[x][y] == "x":
+            if myInput[x][y] == "x" and board[x][y] == ".":
                 cnt = 0
                 for i in range(8):
                     nx = x + dx[i]
@@ -40,7 +34,23 @@ else:
                             cnt += 1
                 answer[x][y] = cnt
 
+if not flag:
+    calculateNumber()
+    for x in range(n):
+        for y in range(n):
+            if (x,y) in bomb:
+                answer[x][y] = "*"
+
     for x in range(n):
         for y in range(n):
             print(answer[x][y], end="")
         print()
+
+else:
+    calculateNumber()
+    for x in range(n):
+        for y in range(n):
+            print(answer[x][y], end="")
+        print()
+
+
