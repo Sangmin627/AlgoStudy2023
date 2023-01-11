@@ -6,17 +6,16 @@ def high(n):
     return result
 
 
+# 윗 줄부터 차례 대로..
 def star(n, origin):
+    # n = 0 일때, 즉 가운데 줄은 한번만 실행 되어야함.
     if n >= 0:
         print('* ' * (origin - n) + '*' * high(n) + ' *' * (origin - n))
-
-    elif n < 0:
-        print('* ' * (origin - abs(n) + 1) + ' ' * high(abs(n) - 1) + ' *' * (origin - abs(n) + 1))
-
     if n > 0:
         print('* ' * (origin - n + 1) + ' ' * high(n - 1) + ' *' * (origin - n + 1))
 
     elif n < 0:
+        print('* ' * (origin - abs(n) + 1) + ' ' * high(abs(n) - 1) + ' *' * (origin - abs(n) + 1))
         print('* ' * (origin - abs(n)) + '*' * high(abs(n)) + ' *' * (origin - abs(n)))
 
     # 끝까지 다 돌았으면 stop
