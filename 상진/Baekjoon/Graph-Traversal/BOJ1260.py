@@ -15,7 +15,6 @@ def dfs(start):
     print(start, end=' ')
     for i in range(1, n+1):
         if graph[start][i] == 1 and visitedDfs[i] == 0:
-            visitedDfs[i] = 1
             dfs(i)
 
 def bfs(start):
