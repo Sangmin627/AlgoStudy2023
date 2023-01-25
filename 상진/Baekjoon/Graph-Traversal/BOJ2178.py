@@ -9,7 +9,7 @@ n,m = map(int, input().split())
 graph = [list(map(int, input().rstrip())) for _ in range(n)]
 
 def bfs(startX, startY):
-    q = deque((startX, startY))
+    q = deque()
     q.append((startX, startY))
     while q:
         x, y = q.popleft()
