@@ -16,8 +16,8 @@ if __name__ == '__main__':
     keyboard.append(list("zxcvbnm   "))
 
     a = list(input().replace(' ', ''))
-    start_L = searchIndex(a[0])
-    start_R = searchIndex(a[1])
+    start_L = searchIndex(a[0]) # 왼손 시작점
+    start_R = searchIndex(a[1]) # 오른손 시작점
 
     b = list(input())
     ZOAC = []
