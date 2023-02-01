@@ -5,7 +5,7 @@ n = int(sys.stdin.readline())
 dp = [0, 1]
 
 for i in range(2, n + 1):
-    min_value = 10
+    min_value = 4
     r = 1
 
     while r**2 <= i:
