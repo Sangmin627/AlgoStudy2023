@@ -4,6 +4,7 @@ input = sys.stdin.readline
 
 N = int(input())
 stair = [0]
+음
 for i in range(N):
     stair.append(int(input()))
 
@@ -23,8 +24,8 @@ for i in range(N + 1):
         max_stair[1] = [1]
     elif i == 2:
         max_stair[2] = [1, 2]
-    elif i == 3:
-        max_stair[3] = [2, 3]
+    # elif i == 3:
+    #     max_stair[3] = [2, 3]
     else:
         Max = sumAll(i - 3) + stair[i - 1]
         max_stair[i] += max_stair[i - 3] + [i - 1, i]
