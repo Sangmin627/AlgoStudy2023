@@ -21,6 +21,7 @@ desk = [[0 for _ in range(n)]for _ in range(n)]
 for i in range(num):
 	arr = list(map(int,input().split()))
 	student[arr[0]] = arr[1:]
+
 #-------------------여기까지 입력----------------------------------------
 
 # 각각의 학생마다 for문을 돌린다
