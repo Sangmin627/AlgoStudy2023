@@ -5,28 +5,23 @@ n = int(input())
 times = []
 for i in range(n):
     start, end = map(int, input().split())
-    times.append((start, end, end-start))
+    times.append((start, end, i))
+times.sort(key=lambda x: (x[0], x[1]))
 
-times.sort(key=lambda x: (x[0], x[1], x[2]))
 visited = [0] * n
+answer = 0
 
-def sim(startIdx):
-    before_time = times[startIdx]
-    for idx, nexts in enumerate(times):
-        if not visited[idx]:
-            next_start = nexts[0]
-            before_end = before_time[1]
-            if next_start == before_end:
-                visited[idx] = 1
-                sim(idx)
+idx = 1
+while sum(visited) != n:
+    before_start, before_end, original_idx = times[idx - 1]
+    next_start, next_end, next_original_idx = times[idx]
+    visited[original_idx] = 1
+    if not visited[next_original_idx]:
+        if next_start >= before_end:
+            idx += 1
+        elif next_start < before_end:
+            answer += 1
+            times.append(times.pop(idx))
+        visited[next_original_idx] = 1
 
-startIdx = 0
-visited[0] = 1
-sim(0)
-answer = 1
-for i in range(n):
-    if not visited[i]:
-        sim(i)
-        answer += 1
-
-print(answer)
+print(answer if answer != 0 else 1)
