@@ -14,6 +14,8 @@ if cranes[0] < boxs[0]:
 answer = 0
 while boxs:
     for i in range(n):
+        if boxs and cranes[i] < boxs[-1]:
+            continue
         for j in range(len(boxs)):
             if cranes[i] >= boxs[j]:
                 boxs.pop(j)
