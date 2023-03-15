@@ -40,6 +40,6 @@ while True:
         i += 1
 
     if flag:
-        print('<', ''.join(prob), '> is acceptable.', sep='')
+        print('<' + ''.join(prob) + '> is acceptable.')
     else:
-        print('<', ''.join(prob), '> is not acceptable.', sep='')
+        print('<' + ''.join(prob) + '> is not acceptable.')
