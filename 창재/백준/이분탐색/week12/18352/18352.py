@@ -16,7 +16,6 @@ print(network)
 
 answer = []
 
-
 def bfs(start):
     q = deque()
     q.append(start)
@@ -26,7 +25,7 @@ def bfs(start):
         a = q.popleft()
 
         for i in network[a]:
-            if i != x and visited[i] == 0:     # 이렇게 하면 시작점을 다시 방문할 수 있음.
+            if i != x and visited[i] == 0:     # i != x 으로 재방문 방지
                 visited[i] += visited[a] + 1
                 if visited[i] == k:
                     flag = True
