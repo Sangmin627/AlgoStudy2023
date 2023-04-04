@@ -1,28 +1,29 @@
-import sys,heapq
+import sys
 input = sys.stdin.readline
 
 N = int(input())
 arr = list(map(int, input().split()))
 
+cnt_r, cnt_b = 0,0
+max_val = max(arr)
+index_list = []
+
 for i in range(N):
-    arr[i] = -arr[i]
+    if max_val == arr[i]:
+        index_list.append(i)
 
-lq = []
-cnt_r,cnt_b = 0,0
-for i in range(1,N):
-    left = arr[i-1]
-    right = arr[i:]
-    heapq.heappush(lq,left)
-    heapq.heapify(right)
-    if -lq[0] < -right[0]:
-        cnt_b += 1
-    elif -lq[0] > -right[0]:
-        cnt_r += 1
+if len(index_list) == 1:
+    idx = index_list[0]
+    cnt_b = idx
+    cnt_r = N - 1 - idx
+else:
+    min_idx,max_idx = index_list[0],index_list[-1]
+    cnt_b = min_idx
+    cnt_r = N - 1 - max_idx
 
-# print(cnt_r, cnt_b)
-if cnt_b > cnt_r:
-    print("B")
-elif cnt_b < cnt_r:
+if cnt_b < cnt_r :
     print("R")
+elif cnt_b > cnt_r:
+    print("B")
 else:
     print("X")
