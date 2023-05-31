@@ -1,10 +1,12 @@
+
+
 from collections import deque
 
 
 def solution(queue1, queue2):
     answer = 0
 
-    sq1 = deque(queue1)
+    size = len(queue1) * 2 + 1
 
     q1 = deque(queue1)
     q2 = deque(queue2)
@@ -21,7 +23,7 @@ def solution(queue1, queue2):
         return -1
 
     while qsum1 != qsum2:
-        if answer > 0 and q1 == sq1:
+        if answer > size:
             return -1
         if qsum1 > qsum2:
             n = q1.popleft()
