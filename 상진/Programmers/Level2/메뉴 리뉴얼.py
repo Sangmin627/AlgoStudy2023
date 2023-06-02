@@ -1,25 +1,34 @@
 from itertools import combinations
-from collections import Counter
 
 def solution(orders, course):
     answer = []
+    odict = dict()
+
+    for order in orders:
+        for i in range(2, len(order) + 1):
+            comb = list(combinations(sorted(order), i))
+            for c in comb:
+                cs = "".join(c)
+                if cs not in odict.keys():
+                    odict[cs] = 1
+                else:
+                    odict[cs] += 1
 
     for c in course:
-        combs = []
-        for order in orders:
-            for comb in combinations(sorted(order), c):
-                combs.append("".join(comb))
-        order_counts = Counter(combs).most_common()
+        tmps = []
+        for key in odict.keys():
+            if len(key) == c and odict[key] >= 2:
+                tmps.append([odict[key], key])
 
-        if not order_counts or order_counts[0][1] < 2:
+        tmps.sort(reverse=True)
+        if not tmps:
             continue
 
-        max_count = order_counts[0][1]
-
-        for order in order_counts:
-            if order[1] < max_count:
+        max_count = tmps[0][0]
+        for tmp in tmps:
+            if tmp[0] < max_count:
                 break
-            answer.append(order[0])
+            answer.append(tmp[1])
 
     answer.sort()
     return answer
