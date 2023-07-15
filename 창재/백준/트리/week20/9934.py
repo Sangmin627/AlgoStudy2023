@@ -7,15 +7,15 @@ class Node:
         self.right_node = right_node
 
 
-def pre_input(x, order):
+def preorder_input(x, order):
     if tree[x].left_node is not None:
-        pre_input(tree[x].left_node, order)
+        preorder_input(tree[x].left_node, order)
 
     real_data = order.pop()
     tree[x].data = real_data
 
     if tree[x].right_node is not None:
-        pre_input(tree[x].right_node, order)
+        preorder_input(tree[x].right_node, order)
 
 
 K = int(input())
@@ -31,7 +31,7 @@ for i in range(2 ** K - 1):
 
 
 order.reverse() # pop해서 left 부터 채우기 위해.
-pre_input(0, order)
+preorder_input(0, order)
 
 
 for i in range(1, K + 1):
