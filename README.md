@@ -21,4 +21,6 @@
 |  17  |05.22-05.28|   카카오 기출 (L2)   |       [바로가기](https://github.com/Sangmin627/AlgoStudy2023/pull/49)       |
 |  18  |05.29-06.04|   카카오 기출 (L2)   |       [바로가기](https://github.com/Sangmin627/AlgoStudy2023/pull/51)       |
 |  19  |07.03-07.09|     유니온파인드      |       [바로가기](https://github.com/Sangmin627/AlgoStudy2023/pull/54)       |
-|  20  |07.10-07.16|       트리        |                                  바로가기                                   |
+|  20  |07.10-07.16|       트리        |         [바로가기](https://github.com/Sangmin627/AlgoStudy2023/pull/56)       |
+|  21  |07.17-07.23|       비트마스크        |         바로가기       |
+
