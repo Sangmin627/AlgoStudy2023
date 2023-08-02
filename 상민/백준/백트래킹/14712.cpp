@@ -25,11 +25,12 @@ void dfs(int y, int x) {
     int newY = (x+1 == M) ? y+1 : y;
     int newX = (x+1 == M) ? 0 : x+1;
 
+
     // 전부 1이면? 무조건 0
     if (up == 1 && left == 1 && leftUp == 1){
         nemo[y][x] = 0;
         dfs(newY, newX);
-    } else { //그게 아닐경우, 전부1 아니거나 아직 채워진게 없거나 낭떠러지인 경우
+    } else { //안채워지거나 낭떨어지
         nemo[y][x] = 0;
         dfs(newY, newX);
         nemo[y][x] = 1;
