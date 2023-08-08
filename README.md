@@ -23,4 +23,9 @@
 |  19  |07.03-07.09|    유니온파인드     |                      [바로가기](https://github.com/Sangmin627/AlgoStudy2023/pull/54)                       |
 |  20  |07.10-07.16|      트리       |                      [바로가기](https://github.com/Sangmin627/AlgoStudy2023/pull/56)                       |
 |  21  |07.17-07.23|     백트래킹      |                       [바로가기](https://github.com/Sangmin627/AlgoStudy2023/pull/58)                      |
+|  22  |07.27-08.02|     그리디      |                       [바로가기](https://github.com/Sangmin627/AlgoStudy2023/pull/61)                      |
+|  23  |08.03-08.09|     그리디      |                       [바로가기](https://github.com/Sangmin627/AlgoStudy2023/pull/62)                      |
+
+
+
 
