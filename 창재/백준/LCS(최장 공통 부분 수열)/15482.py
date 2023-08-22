@@ -1,8 +1,8 @@
 import sys
 
 input = sys.stdin.readline
-S1 = input()
-S2 = input()
+S1 = list(input().rstrip())
+S2 = list(input().rstrip())
 
 L1 = len(S1)
 L2 = len(S2)
