@@ -18,5 +18,5 @@ while 1:
                 dp[i][j] = dp[i - 1][j + 1]
             else:
                 dp[i][j] = dp[i][j - 1] + dp[i - 1][j + 1]
-k
+
     print(dp[N][0])
