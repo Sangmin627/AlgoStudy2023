@@ -14,10 +14,6 @@ else:
     INF = 10e9
     visited = [INF for _ in range(LIMIT + 1)]
 
-    # i = 0
-    # while N * (2 ** i) <= LIMIT:
-    #     visited[N * (2 ** i)] = 0
-    #     i += 1
     visited[N] = 0
     while q:
         x = q.popleft()
